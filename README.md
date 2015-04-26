@@ -8,4 +8,4 @@ This code goes with the video tutorial posted here:
 
 [avsTwitter]: http://twitter.com/avanslaars
 [avsMedium]: https://medium.com/@avanslaars/
-[vid]:
+[vid]: https://www.youtube.com/watch?v=T-ZV9dv93sw
