@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Riot - Contacts List - Ajax Style</title>
+  </head>
+  <body>
+
+    <contact-list></contact-list>
+
+
+    <script src="bower_components/riot/riot.js"></script>
+    <script src="tags/all.js"></script>
+    <script>
+      // var peeps = [{first:"John",last:"Doe"},{first:"Sally",last:"Smith"}]
+      riot.mount('contact-list', {callback:tagCallback})
+
+      function tagCallback(theTag){
+        console.log('callback executed')
+        var request = new XMLHttpRequest()
+        request.open('GET','people.json',true)
+        request.onload = function(){
+          if(request.status == 200){
+            var data = JSON.parse(request.responseText)
+            theTag.trigger('data_loaded',data.people)
+          }
+        }
+
+        setTimeout(function(){
+          request.send()
+        },2000)
+      }
+    </script>
+  </body>
+</html>
